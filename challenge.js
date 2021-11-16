@@ -1,17 +1,10 @@
-function gradingStudents(grades) {
-    let newGrades = [];
-    for(let i = 0; i < grades.length; i++) {
-        if(grades[i] >= 40 ){ 
-           if(grades[i]%5 === 1) {
-            grades[i] += 1;
-            newGrades.push(grades[i])
-        } else if(grades[i]%5 === 2) {
-            grades[i] += 2;
-            newGrades.push(grades[i])
-        }else if(grades[i]%5==0){
-            newGrades.push(grades[i])
-        }
-      }
-    }
-    return newGrades;
-}
+const result = [];
+    grades.forEach(element => {
+        result.push(
+            element < 0? 0 :
+            element >100? 100 :
+            element >= 38 && element % 5 >= 3 ? element + (5 - element % 5) :
+            element
+        );
+    });
+    return result;
